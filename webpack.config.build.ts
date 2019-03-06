@@ -8,7 +8,7 @@ const ROOT_PATH = path.resolve(__dirname);
 const config: webpack.Configuration = webpackMerge(common, {
   mode: 'production',
   entry: {
-    'material-ui-linkify': path.resolve(ROOT_PATH, 'src/index.js'),
+    'material-ui-linkify': path.resolve(ROOT_PATH, 'src/index.ts'),
   },
   output: {
     path: path.resolve(ROOT_PATH, 'dist'),
@@ -32,7 +32,7 @@ const config: webpack.Configuration = webpackMerge(common, {
         amd: 'react-dom',
       },
     },
-    "@material-ui/core",
+    '@material-ui/core',
     /@material-ui\/core\/*./,
   ],
   plugins: [
