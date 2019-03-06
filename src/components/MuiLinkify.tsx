@@ -1,16 +1,40 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { string } from 'prop-types';
 import { Link as MuiLink } from '@material-ui/core';
 import LinkifyIt from 'linkify-it';
 import tlds from 'tlds';
 
-const linkify = new LinkifyIt();
-linkify.tlds(tlds);
+type Validate = (text: string, pos: number, self: any) => number;
+
+interface Match {
+  index: number;
+  lastIndex: number;
+  raw: string;
+  schema: string;
+  text: string;
+  url: string;
+}
+
+interface Schema {
+  readonly [key: string]: {
+    readonly validate: string | RegExp | Validate;
+    readonly normalize?: (match: Match) => void;
+  };
+}
 
 const MuiLinkify: React.FunctionComponent<{
   children: React.ReactNode,
+  schema?: Schema,
+  options?: LinkifyIt.Options,
+  includeTLDs?: boolean,
   LinkProps?: any,
-}> = ({ children, LinkProps = {} }) => {
+}> = ({ children, schema = {}, options = {}, includeTLDs = true, LinkProps = {} }) => {
+  const linkify = new LinkifyIt(schema, options);
+
+  if (includeTLDs === true) {
+    linkify.tlds(tlds);
+  }
+
   const parseString = (string: string) => {
     if (string === ''
     || string === null
@@ -92,11 +116,17 @@ const MuiLinkify: React.FunctionComponent<{
 
 MuiLinkify.propTypes = {
   children: PropTypes.node.isRequired,
+  schema: PropTypes.any,
+  options: PropTypes.object,
+  includeTLDs: PropTypes.bool,
   LinkProps: PropTypes.object,
 };
 
 MuiLinkify.defaultProps = {
   children: <div />,
+  schema: {},
+  options: {},
+  includeTLDs: true,
   LinkProps: {},
 };
 
