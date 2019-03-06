@@ -7,7 +7,10 @@ import tlds from 'tlds';
 const linkify = new LinkifyIt();
 linkify.tlds(tlds);
 
-const MuiLinkify = ({ children, LinkProps = {} }) => { // tslint:disable-line:variable-name
+const MuiLinkify: React.FunctionComponent<{
+  children: React.ReactNode,
+  LinkProps?: any,
+}> = ({ children, LinkProps = {} }) => {
   const parseString = (string: string) => {
     if (string === ''
     || string === null
@@ -89,12 +92,12 @@ const MuiLinkify = ({ children, LinkProps = {} }) => { // tslint:disable-line:va
 
 MuiLinkify.propTypes = {
   children: PropTypes.node.isRequired,
-  LineProps: PropTypes.object,
+  LinkProps: PropTypes.object,
 };
 
 MuiLinkify.defaultProps = {
   children: <div />,
-  LineProps: {},
+  LinkProps: {},
 };
 
 export default MuiLinkify;

@@ -1,18 +1,36 @@
 import React from 'react';
-import { Link as MuiLink } from '@material-ui/core';
+import MuiLink from '@material-ui/core/Link';
+import Typography from '@material-ui/core/Typography';
 import MuiLinkify from '../../components/MuiLinkify';
 
 export default () => (
-  <MuiLinkify>
-    See source code at https://github.com/alexplumb/material-ui-linkify
-
-    <div>
+  <>
+    <MuiLinkify>
       See source code at https://github.com/alexplumb/material-ui-linkify
 
-    </div>
+      <div>
+        See source code at https://github.com/alexplumb/material-ui-linkify
 
-    <MuiLink href="https://github.com/alexplumb/material-ui-linkify">
-      https://github.com/alexplumb/material-ui-linkify
-    </MuiLink>
-  </MuiLinkify>
+      </div>
+
+      <MuiLink href="https://github.com/alexplumb/material-ui-linkify">
+        https://github.com/alexplumb/material-ui-linkify
+      </MuiLink>
+    </MuiLinkify>
+
+    <br />
+
+    <Typography
+      variant="h6"
+    >
+      <MuiLinkify
+        LinkProps={{
+          variant: 'body1',
+          target: '_blank',
+        }}
+      >
+        See source code at https://github.com/alexplumb/material-ui-linkify
+      </MuiLinkify>
+    </Typography>
+  </>
 );

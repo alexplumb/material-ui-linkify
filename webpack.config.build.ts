@@ -18,7 +18,6 @@ const config: webpack.Configuration = webpackMerge(common, {
   },
   externals: [
     {
-      lodash: 'lodash',
       react: {
         root: 'React',
         commonjs2: 'react',

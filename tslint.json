@@ -3,6 +3,7 @@
     "tslint-config-airbnb"
   ],
   "rules": {
-    "import-name": [ false ]
+    "import-name": [ false ],
+    "variable-name": [ false ]
   }
 }
