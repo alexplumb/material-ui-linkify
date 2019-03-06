@@ -1,7 +1,7 @@
 {
-  "name": "material-ui-banner",
-  "version": "1.1.2",
-  "description": "A material-ui component that allows you to add a banner underneath the app bar.",
+  "name": "material-ui-linkify",
+  "version": "1.0.0",
+  "description": "Converts links in text to Material-UI Links using the Markdown Linkify library",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,36 +10,34 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/alexplumb/material-ui-banner"
+    "url": "https://github.com/alexplumb/material-ui-linkify"
   },
   "keywords": [
     "material",
     "react",
-    "banner"
+    "linkify"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/alexplumb/material-ui-banner/issues"
+    "url": "https://github.com/alexplumb/material-ui-linkify/issues"
   },
-  "homepage": "https://github.com/alexplumb/material-ui-banner",
+  "homepage": "https://github.com/alexplumb/material-ui-linkify",
   "devDependencies": {
-    "@babel/core": "^7.1.0",
-    "@babel/plugin-proposal-class-properties": "^7.1.0",
-    "@babel/plugin-proposal-decorators": "^7.1.2",
-    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
-    "@babel/preset-env": "^7.1.0",
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.2",
-    "react-hot-loader": "^4.3.12",
-    "webpack": "^4.20.1",
-    "webpack-cli": "^3.1.1",
-    "webpack-dev-server": "^3.1.9",
-    "webpack-merge": "^4.1.4"
+    "babel-loader": "^8.0.5",
+    "react-hot-loader": "^4.7.2",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1",
+    "webpack-merge": "^4.2.1"
   },
   "dependencies": {
-    "@material-ui/core": "^3.1.1",
-    "prop-types": "^15.6.2",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "@material-ui/core": "^3.9.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
   }
 }
