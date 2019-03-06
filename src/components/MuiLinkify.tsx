@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link as MuiLink } from '@material-ui/core';
 import LinkifyIt from 'linkify-it';
 import tlds from 'tlds';
@@ -6,7 +7,7 @@ import tlds from 'tlds';
 const linkify = new LinkifyIt();
 linkify.tlds(tlds);
 
-export default ({ children, LinkProps = {} }) => {
+const MuiLinkify = ({ children, LinkProps = {} }) => { // tslint:disable-line:variable-name
   const parseString = (string: string) => {
     if (string === ''
     || string === null
@@ -85,3 +86,15 @@ export default ({ children, LinkProps = {} }) => {
 
   return parse(children);
 };
+
+MuiLinkify.propTypes = {
+  children: PropTypes.node.isRequired,
+  LineProps: PropTypes.object,
+};
+
+MuiLinkify.defaultProps = {
+  children: <div />,
+  LineProps: {},
+};
+
+export default MuiLinkify;
