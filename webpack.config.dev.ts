@@ -23,7 +23,6 @@ const webpackConfig: webpack.Configuration = webpackMerge(webpackConfigCommon, {
       'process.env': {
         NODE_ENV: JSON.stringify('development'),
       },
-      __DEV__: true,
     }),
   ],
   module: {

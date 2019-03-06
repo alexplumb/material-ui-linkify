@@ -1,4 +1,4 @@
 import MuiLinkify from './components/MuiLinkify';
 export default MuiLinkify;
 
-if (process.env.__DEV__) require('./demo/index.tsx');
+if (process.env.NODE_ENV === 'development') require('./demo/index.tsx');
