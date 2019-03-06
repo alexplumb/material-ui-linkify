@@ -1,8 +1,8 @@
-const webpack = require('webpack');
-const merge = require('webpack-merge');
-const common = require('./webpack.config.common');
+import webpack from 'webpack';
+import webpackMerge from 'webpack-merge';
+import webpackConfigCommon from './webpack.config.common';
 
-module.exports = merge(common, {
+const webpackConfig: webpack.Configuration = webpackMerge(webpackConfigCommon, {
   devtool: 'inline-source-map',
   devServer: {
     headers: {
@@ -26,4 +26,23 @@ module.exports = merge(common, {
       __DEV__: true,
     }),
   ],
+  module: {
+    rules: [
+      {
+        enforce: 'pre',
+        test: /\.(ts|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'tslint-loader',
+          options: {
+            fix: true,
+            formatter: 'verbose',
+            emitErrors: true,
+          },
+        },
+      },
+    ],
+  },
 });
+
+export default webpackConfig;

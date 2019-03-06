@@ -1,12 +1,13 @@
-const path = require('path');
+import webpack from 'webpack';
+import path from 'path';
 
 const ROOT_PATH = path.resolve(__dirname);
 
 // Common configuration settings
-module.exports = {
-  entry: path.resolve(ROOT_PATH, 'src/index.js'),
+const config: webpack.Configuration = {
+  entry: path.resolve(ROOT_PATH, 'src/index.ts'),
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
     modules: [path.resolve(__dirname, 'node_modules')],
   },
   output: {
@@ -16,14 +17,16 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(ts|tsx)$/,
         include: path.resolve(ROOT_PATH, 'src'),
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
             presets: [
               '@babel/preset-env',
               '@babel/preset-react',
+              '@babel/preset-typescript',
             ],
             plugins: [
               '@babel/plugin-proposal-object-rest-spread',
@@ -35,3 +38,5 @@ module.exports = {
     ],
   },
 };
+
+export default config;

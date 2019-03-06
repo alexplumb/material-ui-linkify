@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "lib": ["es6", "es2015.promise", "es2015.generator", "es2017", "scripthost", "dom"],
+    "module": "commonjs",
+    "noImplicitAny": false,
+    "allowSyntheticDefaultImports": true,
+    "outDir": "dist",
+    "sourceMap": true,
+    "removeComments": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "noLib": false,
+    "target": "es6",
+    "jsx": "react",
+    "typeRoots": [
+      "node_modules/@types",
+    ]
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

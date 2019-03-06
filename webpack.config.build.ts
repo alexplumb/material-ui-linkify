@@ -1,19 +1,19 @@
-const path = require('path');
-const webpack = require('webpack');
-const merge = require('webpack-merge');
-const common = require('./webpack.config.common');
+import webpack from 'webpack';
+import webpackMerge from 'webpack-merge';
+import path from 'path';
+import common from './webpack.config.common';
 
 const ROOT_PATH = path.resolve(__dirname);
 
-module.exports = merge(common, {
+const config: webpack.Configuration = webpackMerge(common, {
   mode: 'production',
   entry: {
-    'material-ui-banner': path.resolve(ROOT_PATH, 'src/index.js'),
+    'material-ui-linkify': path.resolve(ROOT_PATH, 'src/index.js'),
   },
   output: {
     path: path.resolve(ROOT_PATH, 'dist'),
     filename: 'index.js',
-    library: 'MaterialUiBanner',
+    library: 'MaterialUiLinkify',
     libraryTarget: 'umd',
   },
   externals: [
@@ -44,3 +44,5 @@ module.exports = merge(common, {
     }),
   ],
 });
+
+export default config;
