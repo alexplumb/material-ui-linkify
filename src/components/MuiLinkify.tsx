@@ -1,30 +1,12 @@
 import React from 'react';
-import PropTypes, { string } from 'prop-types';
+import PropTypes from 'prop-types';
 import { Link as MuiLink } from '@material-ui/core';
 import LinkifyIt from 'linkify-it';
 import tlds from 'tlds';
 
-type Validate = (text: string, pos: number, self: any) => number;
-
-interface Match {
-  index: number;
-  lastIndex: number;
-  raw: string;
-  schema: string;
-  text: string;
-  url: string;
-}
-
-interface Schema {
-  readonly [key: string]: {
-    readonly validate: string | RegExp | Validate;
-    readonly normalize?: (match: Match) => void;
-  };
-}
-
 const MuiLinkify: React.FunctionComponent<{
   children: React.ReactNode,
-  schema?: Schema,
+  schema?: LinkifyIt.SchemaRules,
   options?: LinkifyIt.Options,
   includeTLDs?: boolean,
   LinkProps?: any,
