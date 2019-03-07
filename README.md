@@ -1,7 +1,7 @@
 # material-ui-linkify
 Converts links in text to Material-UI Links using the Markdown-it Linkify-it library  
-Uses https://github.com/markdown-it/linkify-it
-Inspired by https://github.com/tasti/react-linkify/
+Uses https://github.com/markdown-it/linkify-it  
+Inspired by https://github.com/tasti/react-linkify/  
 
 ## Installation
 
