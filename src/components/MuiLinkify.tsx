@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link as MuiLink } from '@material-ui/core';
+import MuiLink from '@material-ui/core/Link';
 import LinkifyIt from 'linkify-it';
 import tlds from 'tlds';
 
