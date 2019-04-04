@@ -1,6 +1,6 @@
 {
   "name": "material-ui-linkify",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Converts links in text to Material-UI Links using the Markdown Linkify library",
   "main": "dist/index.js",
   "scripts": {
