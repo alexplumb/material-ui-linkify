@@ -30,7 +30,6 @@ const config: webpack.Configuration = {
             ],
             plugins: [
               '@babel/plugin-proposal-object-rest-spread',
-              'react-hot-loader/babel',
             ],
           },
         },

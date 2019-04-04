@@ -51,6 +51,7 @@ export default () => (
       paragraph
     >
       <MuiLinkify
+        hostnameOnly
         LinkProps={{
           variant: 'body1',
           target: '_blank',

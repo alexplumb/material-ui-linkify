@@ -1,7 +1,7 @@
 # material-ui-linkify
-Converts links in text to Material-UI Links using the Markdown-it Linkify-it library  
-Uses https://github.com/markdown-it/linkify-it  
-Inspired by https://github.com/tasti/react-linkify/  
+Converts links in text to Material-UI Links using the Markdown-it Linkify-it library
+Uses https://github.com/markdown-it/linkify-it
+Inspired by https://github.com/tasti/react-linkify/
 
 ## Installation
 
@@ -52,3 +52,13 @@ npm install material-ui-linkify --save
 **options**: See https://github.com/markdown-it/linkify-it#new-linkifyitschemas-options for options
 
 **LinkProps**: Properties that you want to pass along to the Link component. See https://material-ui.com/api/link/ for the full API
+
+**hostnameOnly**: Forces certain schemas to only display the hostnames for matched links (boolean, default: false)
+
+**hostnameSchemas**: When `hostnameOnly` is set to `true`, pass an array of schemas that determines which types of URLs to be truncated. (default: `https:, http:, ftp:, //`)
+
+## Notes
+This library requires the [URL interface](https://developer.mozilla.org/en-US/docs/Web/API/URL). If you need to support IE, make sure to install a polyfill.
+
+## License
+Uses the [MIT License](https://opensource.org/licenses/MIT)

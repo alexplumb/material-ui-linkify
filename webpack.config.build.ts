@@ -30,6 +30,12 @@ const config: webpack.Configuration = webpackMerge(common, {
         commonjs: 'react-dom',
         amd: 'react-dom',
       },
+      'prop-types': {
+        commonjs: 'prop-types',
+        commonjs2: 'prop-types',
+        amd: 'prop-types',
+        root: 'PropTypes',
+      },
     },
     '@material-ui/core',
     /@material-ui\/core\/*./,

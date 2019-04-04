@@ -4,13 +4,30 @@ import MuiLink from '@material-ui/core/Link';
 import LinkifyIt from 'linkify-it';
 import tlds from 'tlds';
 
+const defaultHostnameSchemas = [
+  'http:',
+  'https:',
+  'ftp:',
+  '//',
+];
+
 const MuiLinkify: React.FunctionComponent<{
   children: React.ReactNode,
   schema?: LinkifyIt.SchemaRules,
   options?: LinkifyIt.Options,
   includeTLDs?: boolean,
+  hostnameOnly?: boolean,
+  hostnameSchemas?: string[],
   LinkProps?: any,
-}> = ({ children, schema = {}, options = {}, includeTLDs = true, LinkProps = {} }) => {
+}> = ({
+  children,
+  schema = {},
+  options = {},
+  includeTLDs = true,
+  hostnameOnly = false,
+  hostnameSchemas = defaultHostnameSchemas,
+  LinkProps = {},
+}) => {
   const linkify = new LinkifyIt(schema, options);
 
   if (includeTLDs === true) {
@@ -40,13 +57,25 @@ const MuiLinkify: React.FunctionComponent<{
         elements.push(string.substring(lastIndex, match.index));
       }
 
+      let { text } = match;
+
+      if (
+        hostnameOnly === true
+        && Array.isArray(hostnameSchemas)
+        && hostnameSchemas.indexOf(match.schema) !== -1
+      ) {
+        const urlObject = new window.URL(match.url);
+
+        text = urlObject.hostname;
+      }
+
       const component = (
         <MuiLink
           href={match.url}
           key={i}
           {...LinkProps}
         >
-          {match.text}
+          {text}
         </MuiLink>
       );
 
@@ -102,6 +131,8 @@ MuiLinkify.propTypes = {
   options: PropTypes.object,
   includeTLDs: PropTypes.bool,
   LinkProps: PropTypes.object,
+  hostnameOnly: PropTypes.bool,
+  hostnameSchemas: PropTypes.arrayOf(PropTypes.string),
 };
 
 MuiLinkify.defaultProps = {
@@ -110,6 +141,8 @@ MuiLinkify.defaultProps = {
   options: {},
   includeTLDs: true,
   LinkProps: {},
+  hostnameOnly: false,
+  hostnameSchemas: defaultHostnameSchemas,
 };
 
 export default MuiLinkify;
