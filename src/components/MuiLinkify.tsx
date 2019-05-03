@@ -145,4 +145,6 @@ MuiLinkify.defaultProps = {
   hostnameSchemas: defaultHostnameSchemas,
 };
 
+MuiLinkify.displayName = 'MuiLinkify';
+
 export default MuiLinkify;
