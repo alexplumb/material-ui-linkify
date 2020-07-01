@@ -11,6 +11,7 @@ const config: webpack.Configuration = webpackMerge(common, {
     'material-ui-linkify': path.resolve(ROOT_PATH, 'src/index.ts'),
   },
   output: {
+    globalObject: "this",
     path: path.resolve(ROOT_PATH, 'dist'),
     filename: 'index.js',
     library: 'MaterialUiLinkify',

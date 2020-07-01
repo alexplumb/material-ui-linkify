@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import MuiLink from '@material-ui/core/Link';
 import LinkifyIt from 'linkify-it';
 import tlds from 'tlds';
+import URL from 'urlutils';
 
 const defaultHostnameSchemas = [
   'http:',
@@ -64,7 +65,7 @@ const MuiLinkify: React.FunctionComponent<{
         && Array.isArray(hostnameSchemas)
         && hostnameSchemas.indexOf(match.schema) !== -1
       ) {
-        const urlObject = new window.URL(match.url);
+        const urlObject = new URL(match.url);
 
         text = urlObject.hostname;
       }
