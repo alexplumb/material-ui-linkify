@@ -1,5 +1,6 @@
 import webpack from 'webpack';
 import webpackMerge from 'webpack-merge';
+import path from 'path';
 import webpackConfigCommon from './webpack.config.common';
 
 const webpackConfig: webpack.Configuration = webpackMerge(webpackConfigCommon, {
@@ -10,15 +11,24 @@ const webpackConfig: webpack.Configuration = webpackMerge(webpackConfigCommon, {
       'Access-Control-Allow-Methods': 'GET,POST,PUT,DELETE,PATCH,OPTIONS',
       'Access-Control-Allow-Headers': 'content-type,authorization,accept',
     },
-    port: 8181,
-    inline: true,
-    historyApiFallback: true,
-    clientLogLevel: 'none',
+    static: {
+      directory: path.resolve(__dirname, 'dist'),
+      staticOptions: {},
+      // Can be:
+      // serveIndex: {} (options for the `serveIndex` option you can find https://github.com/expressjs/serve-index)
+      serveIndex: true,
+      // Can be:
+      // watch: {} (options for the `watch` option you can find https://github.com/paulmillr/chokidar)
+      watch: true,
+    },
+    client: {
+      logging: 'info',
+      overlay: true,
+      progress: true,
+    },
     open: true,
-    contentBase: 'dist',
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('development'),
@@ -42,6 +52,6 @@ const webpackConfig: webpack.Configuration = webpackMerge(webpackConfigCommon, {
       },
     ],
   },
-});
+} as any);
 
 export default webpackConfig;
