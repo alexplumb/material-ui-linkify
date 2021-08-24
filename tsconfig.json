@@ -1,6 +1,13 @@
 {
   "compilerOptions": {
-    "lib": ["es6", "es2015.promise", "es2015.generator", "es2017", "scripthost", "dom"],
+    "lib": [
+      "es6",
+      "es2015.promise",
+      "es2015.generator",
+      "es2017",
+      "scripthost",
+      "dom"
+    ],
     "module": "commonjs",
     "noImplicitAny": false,
     "allowSyntheticDefaultImports": true,
@@ -12,9 +19,8 @@
     "noLib": false,
     "target": "es6",
     "jsx": "react",
-    "typeRoots": [
-      "node_modules/@types",
-    ]
+    "declaration": true,
+    "declarationMap": true
   },
   "include": [
     "./src/**/*"
