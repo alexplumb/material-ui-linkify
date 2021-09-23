@@ -38,8 +38,8 @@ const config: webpack.Configuration = webpackMerge(common, {
         root: 'PropTypes',
       },
     },
-    '@material-ui/core',
-    /@material-ui\/core\/*./,
+    '@mui/material',
+    /@mui\/material\/*./,
   ],
   plugins: [
     new webpack.DefinePlugin({

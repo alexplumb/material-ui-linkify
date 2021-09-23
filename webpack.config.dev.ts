@@ -35,23 +35,6 @@ const webpackConfig: webpack.Configuration = webpackMerge(webpackConfigCommon, {
       },
     }),
   ],
-  module: {
-    rules: [
-      {
-        enforce: 'pre',
-        test: /\.(ts|tsx)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'tslint-loader',
-          options: {
-            fix: true,
-            formatter: 'verbose',
-            emitErrors: true,
-          },
-        },
-      },
-    ],
-  },
 } as any);
 
 export default webpackConfig;

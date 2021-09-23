@@ -1,6 +1,6 @@
 import React from 'react';
-import MuiLink from '@material-ui/core/Link';
-import Typography from '@material-ui/core/Typography';
+import MuiLink from '@mui/material/Link';
+import Typography from '@mui/material/Typography';
 import MuiLinkify from '../../components/MuiLinkify';
 
 const schema = {
