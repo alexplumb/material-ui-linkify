@@ -1,6 +1,6 @@
 {
   "name": "material-ui-linkify",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Converts links in text to Material-UI Links using the Markdown Linkify library",
   "main": "dist/index.js",
   "scripts": {
@@ -22,7 +22,7 @@
     "url": "https://github.com/alexplumb/material-ui-linkify/issues"
   },
   "homepage": "https://github.com/alexplumb/material-ui-linkify",
-  "sideEffects": false,
+  "sideEffects": true,
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.14.7",
@@ -31,10 +31,11 @@
     "@babel/preset-typescript": "^7.15.0",
     "@types/linkify-it": "^3.0.2",
     "@types/node": "^16.7.1",
-    "@types/react": "^17.0.19",
+    "@types/react": "^17.0.52",
     "@types/react-dom": "^17.0.9",
+    "@types/tapable": "^2.2.2",
+    "@types/tlds": "^1.207.0",
     "@types/webpack": "^5.28.0",
-    "@types/webpack-dev-server": "^3.11.5",
     "@types/webpack-env": "^1.16.2",
     "@types/webpack-merge": "^4.1.5",
     "babel-loader": "^8.2.2",
@@ -49,8 +50,7 @@
   "dependencies": {
     "linkify-it": "^3.0.2",
     "prop-types": "^15.7.2",
-    "tlds": "^1.221.1",
-    "urlutils": "0.0.3"
+    "tlds": "^1.233.0"
   },
   "peerDependencies": {
     "@emotion/react": "^11.4.1",

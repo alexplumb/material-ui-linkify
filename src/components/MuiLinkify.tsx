@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import MuiLink from '@mui/material/Link';
 import LinkifyIt from 'linkify-it';
 import tlds from 'tlds';
-import URL from 'urlutils';
 
 const defaultHostnameSchemas = [
   'http:',
