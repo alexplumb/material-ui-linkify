@@ -3,10 +3,13 @@
   "version": "3.0.0",
   "description": "Converts links in text to Material-UI Links using the Markdown Linkify library",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --config webpack.config.dev.ts --hot --progress --mode development",
-    "build": "webpack --config webpack.config.build.ts --progress --mode production"
+    "build": "npm run build:types && npm run build:webpack",
+    "build:webpack": "webpack --config webpack.config.build.ts --progress --mode production",
+    "build:types": "tsc --emitDeclarationOnly --outFile dist/index.js"
   },
   "repository": {
     "type": "git",
