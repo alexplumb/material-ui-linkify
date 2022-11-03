@@ -29,9 +29,7 @@
     "@babel/preset-env": "^7.15.0",
     "@babel/preset-react": "^7.14.5",
     "@babel/preset-typescript": "^7.15.0",
-    "@types/linkify-it": "^3.0.2",
     "@types/node": "^16.7.1",
-    "@types/react": "^17.0.52",
     "@types/react-dom": "^17.0.9",
     "@types/tapable": "^2.2.2",
     "@types/tlds": "^1.207.0",
@@ -48,6 +46,8 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "@types/linkify-it": "^3.0.2",
+    "@types/react": "^17.0.52",
     "linkify-it": "^3.0.2",
     "prop-types": "^15.7.2",
     "tlds": "^1.233.0"
