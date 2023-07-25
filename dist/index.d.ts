@@ -19,7 +19,8 @@ declare module "index" {
     export default MuiLinkify;
 }
 declare module "demo/components/App" {
-    const _default: () => JSX.Element;
+    import React from 'react';
+    const _default: () => React.JSX.Element;
     export default _default;
 }
 declare module "demo/index" {
